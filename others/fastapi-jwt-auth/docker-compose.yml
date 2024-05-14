@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+
+  web:
+    build: ./project
+    ports:
+      - 8000:8081
+    command: python main.py
+    volumes:
+      - ./project:/usr/src/app
+    # environment:
+    #   - CELERY_BROKER_URL=redis://redis:6379/0
+    #   - CELERY_RESULT_BACKEND=redis://redis:6379/0
+    # depends_on:
+    #   - redis
